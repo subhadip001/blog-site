@@ -1,0 +1,17 @@
+<%- include('partials/header'); -%>
+<h1>Welcome!</h1>
+<p><%= startingContent %></p>
+<div class="message">
+    <a href="/compose">Write a post</a>
+    <h4>All posts you have written are shown below</h4>
+    <hr>
+</div>
+<div class="post-area">
+    <%posts.forEach((item) => { %>
+        <div class="post">
+        <h3> <%= item.blogTitle %> </h3>
+        <p> <%= item.blogBody.slice(0,100) %>... <a href="posts/<%=item.blogTitle%>">Read more</a> </p>
+        </div>
+    <%}); %>
+</div>
+<%- include('partials/footer'); -%>
